@@ -10,9 +10,13 @@ class MP3Importer
   end 
   
   def files
-    #only wants .mps files 
-    Dir.entries(path).select {|entry| entry.include?(".mp3")}
-  end 
+    @files ||= Dir.entries(@path).select {|song| !File.directory?(song) && song.end_with?(".mp3")}
+  end
+  
+  # def files
+  #   #only wants .mps files 
+  #   Dir.entries(path).select {|entry| entry.include?(".mp3")}
+  # end 
   
   def import
     #new files arrays put it through the song class method new by file name
