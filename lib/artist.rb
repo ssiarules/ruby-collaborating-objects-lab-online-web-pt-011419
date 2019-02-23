@@ -5,7 +5,6 @@ class Artist
   def initialize(name)
     @name = name 
     @songs = []
-    
   end 
   
   def songs
@@ -33,6 +32,7 @@ class Artist
     #   end 
     # end 
   end 
+end 
   
   def print_songs 
     @songs.each do |song|
